@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    font-size: 2vh;
+    padding-top: 2em;
+    overflow-x: hidden;
+}
+
+*{
+    color-scheme: dark;
+}
+
+
+#baslik{
+    text-align: center;
+    height: 6em;
+    display: block;
+    padding: 0.3em;
+}
+
+#logo{
+    height: 4em;
+    display: inline-block;
+}
+
+#headhead{
+    margin: 0;
+    color: #ED6952;
+}
+
+.bosluk{
+    height: 1em;
+}
+
+#carbon{
+    height: 50vh;
+    margin-left: calc((100% - 68vh) / 2);
+}
+
+.custom-shape-divider-bottom-1699471182 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1699471182 svg {
+    position: relative;
+    display: block;
+    width: calc(143% + 1.3px);
+    height: 157px;
+}
+
+.custom-shape-divider-bottom-1699471182 .shape-fill {
+    fill: #ED6952;
+}
+
+#mybody{
+    padding: 2em;
+    background: #ED6952;
+    color-scheme: light;
+    font-size: 1.5em;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+pre{
+    background-color: #292D34;
+    padding: 1em;
+    border-radius: 0.3em;
+    color: #E16D75;
+    overflow: auto;
+}
+
+.code > svg {
+    position: absolute;
+    padding: 0.5em;
+    cursor: pointer;
+}
+.code > svg:active {
+    cursor:default;
+}
