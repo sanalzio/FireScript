@@ -1,4 +1,4 @@
-<img src="https://github.com/sanalzio/ZioScript/blob/master/docs/icon-upsize.png?raw=true" alt="logo" align="right" width=100 />
+<img src="https://github.com/sanalzio/ZioScript/blob/master/docs/icon-upsize.png?raw=true" alt="logo" align="right" width=200 />
 
 # ZioScript
 
