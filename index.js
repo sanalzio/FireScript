@@ -1,4 +1,4 @@
-const fsels = document.getElementsByTagName("firescript");
+const fsels = document.getElementsByTagName("zioscript");
 let globaldefinitions = {};
 for (let ein = 0; ein < fsels.length; ein++) {
 	const thisScriptElement = fsels[ein];

@@ -1,11 +1,11 @@
-# 📙 FireScript Documentation
+# 📙 ZioScript Documentation
 
-- [📙 FireScript Documentation](#-firescript-documentation)
+- [📙 ZioScript Documentation](#-zioscript-documentation)
   - [💬 Description](#-description)
   - [✔ Installation](#-installation)
   - [🛠 Usage](#-usage)
-  - [Write FireScript in html code](#write-firescript-in-html-code)
-  - [Write FireScript in external file and import](#write-firescript-in-external-file-and-import)
+  - [Write ZioScript in html code](#write-zioscript-in-html-code)
+  - [Write ZioScript in external file and import](#write-zioscript-in-external-file-and-import)
   - [🔑 Keys](#-keys)
     - [comment lines](#comment-lines)
     - [define](#define)
@@ -43,40 +43,38 @@
     - [\`\`\` Block](#-block-3)
 
 ## 💬 Description
-FireScript is a lightweight javascript library for web development.
-
-**This project idea is developed based on an idea proposed in the Fireship Discord server.**
+ZioScript is a lightweight javascript library for web development.
 
 ## ✔ Installation
 - Paste this tag into the head tag in your html code:
     ```html
-    <style>firescript{display: none;}</style>
+    <style>zioscript{display: none;}</style>
     ```
 - Paste this tag into the body tag in your html code:
     ```html
-    <script src="https://cdn.jsdelivr.net/gh/sanalzio/FireScript@master/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sanalzio/ZioScript@master/index.js"></script>
     ```
 
 
 ## 🛠 Usage
-- Create a new `<firescript></firescript>` tag.
-- And write code in firescript tag content.
+- Create a new `<zioscript></zioscript>` tag.
+- And write code in zioscript tag content.
 
-## Write FireScript in html code
+## Write ZioScript in html code
 ```html
-<firescript>
+<zioscript>
     log Hi, Mom!
-</firescript>
+</zioscript>
 ```
 
-## Write FireScript in external file and import
+## Write ZioScript in external file and import
 **index.fs file content:**
 ```
 log Hi, Mom!
 ```
 
 ```html
-<firescript src="index.fs"></firescript>
+<zioscript src="index.fs"></zioscript>
 ```
 
 ## 🔑 Keys
@@ -330,7 +328,7 @@ groupend
 ```
 
 ### style
-Changes the style of the firescript tag it is within.
+Changes the style of the zioscript tag it is within.
 ```
 style color #E16D75
 ```
@@ -357,7 +355,7 @@ console.log("Bye, Mom!")
 ```
 
 ### $$$ Block
-Runs FireScript code for a specified condition.
+Runs ZioScript code for a specified condition.
 ```
 $$$ mouseover
 log Hi, Mom!
@@ -370,7 +368,7 @@ $$$
 ```
 
 ### ``` Block
-Changes the style of the firescript tag it is within.
+Changes the style of the zioscript tag it is within.
 ```
 ```.
 color: #E16D75;

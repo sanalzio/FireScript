@@ -21,13 +21,13 @@ body{
 }
 
 #logo{
-    height: 4em;
+    height: 5em;
     display: inline-block;
 }
 
 #headhead{
     margin: 0;
-    color: #ED6952;
+    color: #62D557;
 }
 
 .bosluk{
@@ -57,12 +57,12 @@ body{
 }
 
 .custom-shape-divider-bottom-1699471182 .shape-fill {
-    fill: #ED6952;
+    fill: #62D557;
 }
 
 #mybody{
     padding: 2em;
-    background: #ED6952;
+    background: #62D557;
     color-scheme: light;
     font-size: 1.5em;
     color: black;
