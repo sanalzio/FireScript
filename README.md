@@ -1,4 +1,4 @@
-<img src="./docs/icon.svg" alt="logo" align="right" width=100 />
+<img src="./docs/logo.svg" alt="logo" align="right" width=100 />
 
 # ZioScript
 
