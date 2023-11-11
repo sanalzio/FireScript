@@ -74,7 +74,7 @@ log Hi, Mom!
 ```
 
 ```html
-<zioscript src="index.fs"></zioscript>
+<zioscript src="index.zs"></zioscript>
 ```
 
 ## 🔑 Keys
@@ -132,13 +132,12 @@ echo $[${variable}+5]
 ```
 output:
 > 128
-**! Warning:** Mathematical operations should be without spaces.
 
 ### if
 if Executes the following operations if the condition is met.
 ```
 getinp input
-if "$lower{input}"=="mom"
+if "$lower{${input}}"=="mom"
     log Hi, Mom!
 end
 ```
@@ -149,7 +148,7 @@ end
 Executes the following operations if the condition is not met.
 ```
 getinp input
-if "$lower{input}"=="mom"
+if "$lower{${input}}"=="mom"
     log Hi, Mom!
 end
 else
@@ -162,25 +161,23 @@ end
 Converts uppercase letters to lowercase.
 ```
 getinp input
-if "$lower{input}"=="mom"
+if "$lower{${input}}"=="mom"
     log Hi, Mom!
 end
 ```
 output:
 > Hi, Mom!
-**! Warning:** Takes the value of the variable corresponding to the entered value, so you cannot enter a string.
 
 ### upper
 Converts lowercase letters to uppercase.
 ```
 getinp input
-if "$upper{input}"=="MOM"
+if "$upper{${input}}"=="MOM"
     log Hi, Mom!
 end
 ```
 output:
 > Hi, Mom!
-**! Warning:** Takes the value of the variable corresponding to the entered value, so you cannot enter a string.
 
 ### js eval
 Allows running JavaScript code or obtaining a variable.
@@ -192,7 +189,6 @@ end
 ```
 output:
 > Hi, Mom!
-**! Warning:** Should not contain spaces within the entered value.
 
 ### date
 Provides information about the date.
@@ -245,7 +241,7 @@ Imports an external module.
 ```
 import module
 ```
-Imports the `module.fs` file.
+Imports the `module.zs` file.
 **! Warning:** Importing may not work in some browsers due to security restrictions. You can try using localhost.
 
 ## Functions

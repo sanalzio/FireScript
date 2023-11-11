@@ -41,6 +41,7 @@ for (let ein = 0; ein < fsels.length; ein++) {
 	function main(tlines) {
 		for (let index = 0; index < tlines.length; index++) {
 			let line = remtab(tlines[index].replace("\r", ""));
+			let matchs;
 			if (line == "end" || line == "###") {
 				incon = false;
 				continue;
@@ -136,90 +137,48 @@ for (let ein = 0; ein < fsels.length; ein++) {
 			if (incon == true && !lastcondition) {
 				continue;
 			}
-			if (line.includes("$lower{")) {
-				for (let ind = 0; ind < arg.length; ind++) {
-					if (!arg[ind].includes("$lower{")) {
-						continue;
-					}
-					const th = arg.slice(ind).join(" ");
-					if (th.includes("$lower{")) {
-						if (definitions[th.slice(7, th.length - 1)]) {
-							editLine(line.replace(th, definitions[th.slice(7, th.length - 1)].toLowerCase()));
-						} else if (globaldefinitions[th.slice(7, th.length - 1)]) {
-							editLine(line.replace(th, globaldefinitions[th.slice(7, th.length - 1)].toLowerCase()));
-						}
+			matchs = line.match(/\$lower\{.*?\}/g);
+			if (matchs) {
+				for (let thindex = 0; thindex < matchs.length; thindex++) {
+					const th = matchs[thindex];
+					editLine(line.replace(th, th.slice(7, th.length - 1).toLowerCase()))
+				}
+			}
+			matchs = line.match(/\$upper\{.*?\}/g);
+			if (matchs) {
+				for (let thindex = 0; thindex < matchs.length; thindex++) {
+					const th = matchs[thindex];
+					editLine(line.replace(th, th.slice(7, th.length - 1).toUpperCase()))
+				}
+			}
+			matchs = line.match(/\$js\{.*?\}/g);
+			if (matchs) {
+				for (let thindex = 0; thindex < matchs.length; thindex++) {
+					const th = matchs[thindex];
+					editLine(line.replace(th, eval(th.slice(4, th.length - 1))))
+				}
+			}
+			matchs = line.match(/\$date\{.*?\}/g);
+			if (matchs) {
+				for (let thindex = 0; thindex < matchs.length; thindex++) {
+					const th = matchs[thindex];
+					if (th == "$date{}") {
+						editLine(line.replace(th, Date().toString()))
+					} else {
+						editLine(line = line.replace(th, eval("new Date().get" + th.slice(6, th.length - 1).charAt(0).toUpperCase() + th.slice(6, th.length - 1).slice(1) + "()")))
 					}
 				}
 			}
-			if (line.includes("$upper{")) {
-				for (let ind = 0; ind < arg.length; ind++) {
-					if (!arg[ind].includes("$upper{")) {
-						continue;
-					}
-					const th = arg.slice(ind).join(" ");
-					if (th.includes("$upper{")) {
-						if (definitions[th.slice(7, th.length - 1)]) {
-							editLine(line.replace(th, definitions[th.slice(7, th.length - 1)].toUpperCase()));
-						} else if (globaldefinitions[th.slice(7, th.length - 1)]) {
-							editLine(line.replace(th, globaldefinitions[th.slice(7, th.length - 1)].toUpperCase()));
-						}
-					}
-				}
-			}
-			if (line.includes("$js{")) {
-				for (let ind = 0; ind < arg.length; ind++) {
-					if (!arg[ind].includes("$js{")) {
-						continue;
-					}
-					const th = arg.slice(ind).join(" ");
-					if (th.includes("$js{")) {
-						editLine(line.replace(th, eval(th.slice(4, th.length - 1))));
-					}
-				}
-			}
-			if (line.includes("$date{")) {
-				for (let ind = 0; ind < arg.length; ind++) {
-					const th = arg[ind];
-					if (th.includes("$date{")) {
-						if (th=="$date{}") {
-							editLine(
-								line.replace(
-									arg[ind],
-									Date().toString()
-								)
-							);
-						} else {
-							editLine(
-								line.replace(
-									arg[ind],
-									eval(
-										"new Date().get" +
-											th
-												.slice(6, th.length - 1)
-												.charAt(0)
-												.toUpperCase() +
-											th.slice(6, th.length - 1).slice(1) +
-											"()"
-									).toString()
-								)
-							);
-						}
-					}
-				}
-			}
-			if (line.includes("$[")) {
-				for (let ind = 0; ind < arg.length; ind++) {
-					const th = arg[ind];
-					if (th.includes("$[")) {
-						editLine(
-							line.replace(arg[ind], eval(th.slice(2, th.length - 1)).toString())
-						);
-					}
+			matchs = line.match(/\$\[.*?\]/g);
+			if (matchs) {
+				for (let thindex = 0; thindex < matchs.length; thindex++) {
+					const th = matchs[thindex];
+					editLine(line.replace(th, eval(th.slice(2, th.length - 1)).toString()))
 				}
 			}
 			switch (cmd) {
 				case "import":
-					fetch(window.location.href.split("/").slice(0, window.location.href.split("/").length-1).join("/")+"/"+arg.slice(1).join(" ")+".fs")
+					fetch(window.location.href.split("/").slice(0, window.location.href.split("/").length-1).join("/")+"/"+arg.slice(1).join(" ")+".zs")
 						.then((response) => response.text())
 						.then((content) => {
 							main(content.split("\n"));

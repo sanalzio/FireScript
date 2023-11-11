@@ -6,6 +6,14 @@
 		<title>ZioScript</title>
 		<link rel="stylesheet" href="style.css" />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <meta name="description" content="ZioScript is a lightweight javascript library for web development.">
+        <meta name="keywords" content="frontend, FrontEnd, front-end, js, javascript, JavaScript">
+        <meta name="author" content="Sanalzio">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta property="og:title" content="ZioScript" />
+        <meta property="og:image" content="https://raw.githubusercontent.com/sanalzio/ZioScript/master/docs/thubmanil.jpg" />
+        <meta name="og:description" content="ZioScript is a lightweight javascript library for web development.">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<div id="baslik">
@@ -28,345 +36,381 @@
 			</svg>
 		</div>
 		<div id="mybody">
-			<img src="./logoblack.svg" alt="logo" align="right" width="20%" />
+			<md-block>
+# 📙 ZioScript Documentation
 
-			<h1 id="📙-zioscript-documentation">📙 ZioScript Documentation</h1>
-			<ul>
-				<li>
-					<a href="#📙-zioscript-documentation">📙 ZioScript Documentation</a>
-					<ul>
-						<li><a href="#💬-description">💬 Description</a></li>
-						<li><a href="#✔-installation">✔ Installation</a></li>
-						<li><a href="#🛠-usage">🛠 Usage</a></li>
-						<li>
-							<a href="#write-zioscript-in-html-code"
-								>Write ZioScript in html code</a
-							>
-						</li>
-						<li>
-							<a href="#write-zioscript-in-external-file-and-import"
-								>Write ZioScript in external file and import</a
-							>
-						</li>
-						<li>
-							<a href="#🔑-keys">🔑 Keys</a>
-							<ul>
-								<li><a href="#comment-lines">comment lines</a></li>
-								<li><a href="#define">define</a></li>
-								<li><a href="#definejs">definejs</a></li>
-								<li><a href="#randint">randint</a></li>
-								<li><a href="#getinp">getinp</a></li>
-								<li>
-									<a href="#gdefine-grandint-ggetinp">gdefine, grandint, ggetinp</a>
-								</li>
-								<li><a href="#math">math</a></li>
-								<li><a href="#if">if</a></li>
-								<li><a href="#else">else</a></li>
-								<li><a href="#lower">lower</a></li>
-								<li><a href="#upper">upper</a></li>
-								<li><a href="#js-eval">js eval</a></li>
-								<li><a href="#date">date</a></li>
-								<li><a href="#point">point</a></li>
-								<li><a href="#break">break</a></li>
-								<li><a href="#import">import</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#functions">Functions</a>
-							<ul>
-								<li><a href="#log">log</a></li>
-								<li><a href="#write">write</a></li>
-								<li><a href="#writeln">writeln</a></li>
-								<li><a href="#jseval">jseval</a></li>
-								<li><a href="#goto">goto</a></li>
-								<li><a href="#delay">delay</a></li>
-								<li><a href="#alert">alert</a></li>
-								<li><a href="#group">group</a></li>
-								<li><a href="#groupval">groupval</a></li>
-								<li><a href="#groupcollapsed">groupcollapsed</a></li>
-								<li><a href="#groupend">groupend</a></li>
-								<li><a href="#style">style</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#blocks">Blocks</a>
-							<ul>
-								<li><a href="#-block">“”” Block</a></li>
-								<li><a href="#-block-1">‘’’ Block</a></li>
-								<li><a href="#-block-2">$$$ Block</a></li>
-								<li><a href="#-block-3">``` Block</a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-			</ul>
+- [📙 ZioScript Documentation](#-zioscript-documentation)
+  - [💬 Description](#💬-description)
+  - [✔ Installation](#✔-installation)
+  - [🛠 Usage](#🛠-usage)
+  - [Write ZioScript in html code](#write-zioscript-in-html-code)
+  - [Write ZioScript in external file and import](#write-zioscript-in-external-file-and-import)
+  - [🔑 Keys](#🔑-keys)
+    - [comment lines](#comment-lines)
+    - [define](#define)
+    - [definejs](#definejs)
+    - [randint](#randint)
+    - [getinp](#getinp)
+    - [gdefine, grandint, ggetinp](#gdefine-grandint-ggetinp)
+    - [math](#math)
+    - [if](#if)
+    - [else](#else)
+    - [lower](#lower)
+    - [upper](#upper)
+    - [js eval](#js-eval)
+    - [date](#date)
+    - [point](#point)
+    - [break](#break)
+    - [import](#import)
+  - [Functions](#functions)
+    - [log](#log)
+    - [write](#write)
+    - [writeln](#writeln)
+    - [jseval](#jseval)
+    - [goto](#goto)
+    - [delay](#delay)
+    - [alert](#alert)
+    - [group](#group)
+    - [groupval](#groupval)
+    - [groupcollapsed](#groupcollapsed)
+    - [groupend](#groupend)
+    - [style](#style)
+  - [Blocks](#blocks)
+    - [""" Block](#-block)
+    - [''' Block](#-block-1)
+    - [$$$ Block](#-block-2)
+    - [\`\`\` Block](#-block-3)
 
-			<h2 id="💬-description">💬 Description</h2>
-			<p>ZioScript is a lightweight javascript library for web development.</p>
+## 💬 Description
+ZioScript is a lightweight javascript library for web development.
 
-			<h2 id="✔-installation">✔ Installation</h2>
-			<ul>
-				<li>
-					Paste this tag into the head tag in your html code:
-					<pre
-						class="language-html"
-					><code>&lt;style&gt;zioscript{display: none;}&lt;/style&gt;</code></pre>
-				</li>
-				<li>
-					Paste this tag into the body tag in your html code:
-					<pre
-						class="language-html"
-					><code>&lt;script src="https://cdn.jsdelivr.net/gh/sanalzio/ZioScript@master/index.js"&gt;&lt;/script&gt;</code></pre>
-				</li>
-			</ul>
+## ✔ Installation
+- Paste this tag into the head tag in your html code:
+    ```html
+    &lt;style&gt;zioscript{display: none;}&lt;/style&gt;
+    ```
+- Paste this tag into the body tag in your html code:
+    ```html
+    &lt;script src="https://cdn.jsdelivr.net/gh/sanalzio/ZioScript@master/index.js"&gt;&lt;/script&gt;
+    ```
 
-			<h2 id="🛠-usage">🛠 Usage</h2>
-			<ul>
-				<li>
-					Create a new <code>&lt;zioscript&gt;&lt;/zioscript&gt;</code> tag.
-				</li>
-				<li>And write code in zioscript tag content.</li>
-			</ul>
 
-			<h2 id="write-zioscript-in-html-code">Write ZioScript in html code</h2>
-			<pre class="language-html"><code>&lt;zioscript&gt;
+## 🛠 Usage
+- Create a new `&lt;zioscript&gt;&lt;/zioscript&gt;` tag.
+- And write code in zioscript tag content.
+
+## Write ZioScript in html code
+```html
+&lt;zioscript&gt;
+    log Hi, Mom!
+&lt;/zioscript&gt;
+```
+
+## Write ZioScript in external file and import
+**index.fs file content:**
+```
 log Hi, Mom!
-&lt;/zioscript&gt;</code></pre>
-			<h2 id="write-zioscript-in-external-file-and-import">
-				Write ZioScript in external file and import
-			</h2>
-			<p><strong>index.fs file content:</strong></p>
-			<pre class="language-"><code>log Hi, Mom!</code></pre>
-			<pre
-				class="language-html"
-			><code>&lt;zioscript src="index.fs"&gt;&lt;/zioscript&gt;</code></pre>
-			<p>
-				<strong>! Warning:</strong> Due to not establishing a proper file system,
-				the “./“ expression may not work; only paths like “index.fs” or
-				“scripts/index.fs” would work. Also, due to some security issues, the ‘src’
-				function may not work with local files in some browsers. Try running it with
-				localhost.
-			</p>
+```
 
-			<h2 id="🔑-keys">🔑 Keys</h2>
-			<h3 id="comment-lines">comment lines</h3>
-			<pre class="language-"><code>// This is a comment line.</code></pre>
-			<h3 id="define">define</h3>
-			<p>Variable definitions.</p>
-			<pre class="language-"><code>define variable_name Hi, Mom!
-log ${variable_name}</code></pre>
-			<p>output: &gt; Hi, Mom!</p>
+```html
+&lt;zioscript src="index.zs"&gt;&lt;/zioscript&gt;
+```
 
-			<h3 id="definejs">definejs</h3>
-			<p>JavaScript variable definitions.</p>
-			<pre class="language-"><code>definejs variable_name "Hi, Mom!"
-log ${variable_name}</code></pre>
-			<p>output: &gt; Hi, Mom!</p>
+## 🔑 Keys
 
-			<h3 id="randint">randint</h3>
-			<p>Defines a random number variable.</p>
-			<pre class="language-"><code>randint random_integer 1 10
-log ${random_integer}</code></pre>
-			<p>output: &gt; 5</p>
+### comment lines
+```
+// This is a comment line.
+```
 
-			<h3 id="getinp">getinp</h3>
-			<p>Defines an input variable.</p>
-			<pre class="language-"><code>getinp user_input
+### define
+Variable definitions.
+```
+define variable_name Hi, Mom!
+log ${variable_name}
+```
+output:
+> Hi, Mom!
+
+### definejs
+JavaScript variable definitions.
+```
+definejs variable_name "Hi, Mom!"
+log ${variable_name}
+```
+output:
+> Hi, Mom!
+
+### randint
+Defines a random number variable.
+```
+randint random_integer 1 10
+log ${random_integer}
+```
+output:
+> 5
+
+### getinp
+Defines an input variable.
+```
+getinp user_input
 getinp user_input2 Who?
-log ${user_input}</code></pre>
-			<p>output: &gt; Hi, Mom!</p>
+log ${user_input}
+```
+output:
+> Hi, Mom!
 
-			<h3 id="gdefine-grandint-ggetinp">gdefine, grandint, ggetinp</h3>
-			<p>
-				Similar to define, randint, and getinp but globally defines variables using
-				these keywords.
-			</p>
+### gdefine, grandint, ggetinp
+Similar to define, randint, and getinp but globally defines variables using these keywords.
 
-			<h3 id="math">math</h3>
-			<p>Allows mathematical operations.</p>
-			<pre class="language-"><code>define variable 123
-echo $[${variable}+5]</code></pre>
-			<p>
-				output: &gt; 128 <strong>! Warning:</strong> Mathematical operations should
-				be without spaces.
-			</p>
+### math
+Allows mathematical operations.
+```
+define variable 123
+echo $[${variable}+5]
+```
+output:
+> 128
 
-			<h3 id="if">if</h3>
-			<p>if Executes the following operations if the condition is met.</p>
-			<pre class="language-"><code>getinp input
-if "$lower{input}"=="mom"
-log Hi, Mom!
-end</code></pre>
-			<p>
-				<strong>! Warning:</strong> If using a string in a condition, enclose it in
-				double quotes (“”). <strong>! Warning:</strong> Each condition statement
-				must be followed by “end” or “###” to avoid including other operations in
-				the condition.
-			</p>
+### if
+if Executes the following operations if the condition is met.
+```
+getinp input
+if "$lower{${input}}"=="mom"
+    log Hi, Mom!
+end
+```
+**! Warning:** If using a string in a condition, enclose it in double quotes ("").
+**! Warning:** Each condition statement must be followed by "end" or "###" to avoid including other operations in the condition.
 
-			<h3 id="else">else</h3>
-			<p>Executes the following operations if the condition is not met.</p>
-			<pre class="language-"><code>getinp input
-if "$lower{input}"=="mom"
-log Hi, Mom!
+### else
+Executes the following operations if the condition is not met.
+```
+getinp input
+if "$lower{${input}}"=="mom"
+    log Hi, Mom!
 end
 else
-log Hi, Dad!
-end</code></pre>
-			<p>
-				<strong>! Warning:</strong> If using a string in a condition, enclose it in
-				double quotes (“”).
-			</p>
+    log Hi, Dad!
+end
+```
+**! Warning:** If using a string in a condition, enclose it in double quotes ("").
 
-			<h3 id="lower">lower</h3>
-			<p>Converts uppercase letters to lowercase.</p>
-			<pre class="language-"><code>getinp input
-if "$lower{input}"=="mom"
-log Hi, Mom!
-end</code></pre>
-			<p>
-				output: &gt; Hi, Mom! <strong>! Warning:</strong> Takes the value of the
-				variable corresponding to the entered value, so you cannot enter a string.
-			</p>
+### lower
+Converts uppercase letters to lowercase.
+```
+getinp input
+if "$lower{${input}}"=="mom"
+    log Hi, Mom!
+end
+```
+output:
+> Hi, Mom!
 
-			<h3 id="upper">upper</h3>
-			<p>Converts lowercase letters to uppercase.</p>
-			<pre class="language-"><code>getinp input
-if "$upper{input}"=="MOM"
-log Hi, Mom!
-end</code></pre>
-			<p>
-				output: &gt; Hi, Mom! <strong>! Warning:</strong> Takes the value of the
-				variable corresponding to the entered value, so you cannot enter a string.
-			</p>
+### upper
+Converts lowercase letters to uppercase.
+```
+getinp input
+if "$upper{${input}}"=="MOM"
+    log Hi, Mom!
+end
+```
+output:
+> Hi, Mom!
 
-			<h3 id="js-eval">js eval</h3>
-			<p>Allows running JavaScript code or obtaining a variable.</p>
-			<pre class="language-"><code>getinp input
+### js eval
+Allows running JavaScript code or obtaining a variable.
+```
+getinp input
 if "$js{${input}.toLowerCase()}"=="mom"
-log Hi, Mom!
-end</code></pre>
-			<p>
-				output: &gt; Hi, Mom! <strong>! Warning:</strong> Should not contain spaces
-				within the entered value.
-			</p>
+    log Hi, Mom!
+end
+```
+output:
+> Hi, Mom!
 
-			<h3 id="date">date</h3>
-			<p>Provides information about the date.</p>
-			<pre class="language-"><code>log $date{}
-log $date{day}</code></pre>
-			<p>output: &gt; Thu Nov 09 2023 21:56:25 GMT+0300 (GMT+03:00) &gt; 4</p>
-			<h3 id="point">point</h3>
-			<p>Allows placing a specific point in the code.</p>
-			<pre class="language-"><code>define i 0
+### date
+Provides information about the date.
+```
+log $date{}
+log $date{day}
+```
+output:
+> Thu Nov 09 2023 21:56:25 GMT+0300 (GMT+03:00)
+> 4
+
+### point
+Allows placing a specific point in the code.
+```
+define i 0
 point linepoint
 log ${i}
 define i $[${i}+1]
-goto linepoint</code></pre>
-			<p>output: &gt; 0 &gt; 1 &gt; 2 &gt; 3 &gt; …</p>
+goto linepoint
+```
+output:
+> 0
+> 1
+> 2
+> 3
+> ...
 
-			<h3 id="break">break</h3>
-			<p>Ends the point loop.</p>
-			<pre class="language-"><code>define i 0
+
+### break
+Ends the point loop.
+```
+define i 0
 point linepoint
 if ${i}==3
-log ended.
-break
+    log ended.
+    break
 end
 log ${i}
 define i $[${i}+1]
-goto linepoint</code></pre>
-			<p>output: &gt; 0 &gt; 1 &gt; 2 &gt; ended.</p>
+goto linepoint
+```
+output:
+> 0
+> 1
+> 2
+> ended.
 
-			<h3 id="import">import</h3>
-			<p>Imports an external module.</p>
-			<pre class="language-"><code>import module</code></pre>
-			<p>
-				Imports the <code>module.fs</code> file.
-				<strong>! Warning:</strong> Importing may not work in some browsers due to
-				security restrictions. You can try using localhost.
-			</p>
+### import
+Imports an external module.
+```
+import module
+```
+Imports the `module.zs` file.
+**! Warning:** Importing may not work in some browsers due to security restrictions. You can try using localhost.
 
-			<h2 id="functions">Functions</h2>
-			<h3 id="log">log</h3>
-			<p>Writes to the console.</p>
-			<pre class="language-"><code>log Hi, Mom.</code></pre>
-			<p>output: &gt; Hi, Mom.</p>
+## Functions
 
-			<h3 id="write">write</h3>
-			<p>Writes to the HTML output.</p>
-			<pre class="language-"><code>write Hi, Mom.</code></pre>
-			<h3 id="writeln">writeln</h3>
-			<p>Writes to the HTML output as a line.</p>
-			<pre class="language-"><code>writeln Hi, Mom.</code></pre>
-			<h3 id="jseval">jseval</h3>
-			<p>Runs JavaScript code.</p>
-			<pre class="language-"><code>jseval ${input}</code></pre>
-			<h3 id="goto">goto</h3>
-			<p>Goes to the specified point address.</p>
-			<pre class="language-"><code>goto linepoint</code></pre>
-			<h3 id="delay">delay</h3>
-			<p>Waits for the specified milliseconds.</p>
-			<pre class="language-"><code>delay 1000</code></pre>
-			<h3 id="alert">alert</h3>
-			<p>Displays an alert.</p>
-			<pre class="language-"><code>alert Hi, Mom.</code></pre>
-			<h3 id="group">group</h3>
-			<p>Creates a console output group.</p>
-			<pre class="language-"><code>group Hi
+### log
+Writes to the console.
+```
+log Hi, Mom.
+```
+output:
+> Hi, Mom.
+
+### write
+Writes to the HTML output.
+```
+write Hi, Mom.
+```
+
+### writeln
+Writes to the HTML output as a line.
+```
+writeln Hi, Mom.
+```
+
+### jseval
+Runs JavaScript code.
+```
+jseval ${input}
+```
+
+### goto
+Goes to the specified point address.
+```
+goto linepoint
+```
+
+### delay
+Waits for the specified milliseconds.
+```
+delay 1000
+```
+
+### alert
+Displays an alert.
+```
+alert Hi, Mom.
+```
+
+### group
+Creates a console output group.
+```
+group Hi
 groupval mom Mom
 groupval dad Dad
-groupend</code></pre>
-			<h3 id="groupval">groupval</h3>
-			<p>Adds data to a console output group.</p>
-			<pre
-				class="language-"
-			><code>groupval group_variable_name Hi, Mom.</code></pre>
-			<h3 id="groupcollapsed">groupcollapsed</h3>
-			<p>Creates another group within a console output group.</p>
-			<pre class="language-"><code>group Hi
+groupend
+```
+
+### groupval
+Adds data to a console output group.
+```
+groupval group_variable_name Hi, Mom.
+```
+
+### groupcollapsed
+Creates another group within a console output group.
+```
+group Hi
 groupval mom Mom
 groupval dad Dad
 groupcollapsed Brothers
 groupval jake Jake
 groupval peter Peter
-groupend</code></pre>
-			<h3 id="groupend">groupend</h3>
-			<p>Ends a console output group.</p>
-			<pre class="language-"><code>groupend</code></pre>
-			<h3 id="style">style</h3>
-			<p>Changes the style of the zioscript tag it is within.</p>
-			<pre class="language-"><code>style color #62D557</code></pre>
-			<h2 id="blocks">Blocks</h2>
-			<h3 id="-block">“”” Block</h3>
-			<p>Runs JavaScript code.</p>
-			<pre class="language-"><code>"""
+groupend
+```
+
+### groupend
+Ends a console output group.
+```
+groupend
+```
+
+### style
+Changes the style of the zioscript tag it is within.
+```
+style color #E16D75
+```
+
+## Blocks
+
+### """ Block
+Runs JavaScript code.
+```
+"""
 console.log("Hi, Mom!")
-"""</code></pre>
-			<h3 id="-block-1">‘’’ Block</h3>
-			<p>Runs JavaScript code when a specified condition occurs.</p>
-			<pre class="language-"><code>''' mouseover
+"""
+```
+
+### ''' Block
+Runs JavaScript code when a specified condition occurs.
+```
+''' mouseover
 console.log("Hi, Mom!")
 '''
 ''' mouseout
 console.log("Bye, Mom!")
-'''</code></pre>
-			<h3 id="-block-2">$$$ Block</h3>
-			<p>Runs ZioScript code for a specified condition.</p>
-			<pre class="language-"><code>$$$ mouseover
+'''
+```
+
+### $$$ Block
+Runs ZioScript code for a specified condition.
+```
+$$$ mouseover
 log Hi, Mom!
-style color #62D557
+style color #E16D75
 $$$
 $$$ mouseout
 log Bye, Mom!
 style color #f2f2f2
-$$$</code></pre>
-			<h3 id="-block-3">``` Block</h3>
-			<p>Changes the style of the zioscript tag it is within.</p>
-			<pre><code>```
-color: #62D557;
-```</code>
-</pre>
+$$$
+```
+
+### ``` Block
+Changes the style of the zioscript tag it is within.
+```
+```.
+color: #E16D75;
+```.
+```
+
+			</md-block>
 		</div>
 		<script type="module" src="https://md-block.verou.me/md-block.js"></script>
 	</body>
