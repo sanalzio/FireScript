@@ -71,7 +71,7 @@ log Hi, Mom!
 ```
 
 ```html
-<zioscript src="index.zs"></zioscript>
+<zioscript src="./index.zs"></zioscript>
 ```
 
 ## 🔑 Keys

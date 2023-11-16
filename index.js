@@ -1,3 +1,8 @@
+function convertToAbsoluteUrl(relativePath) {
+	let baseUrl = window.location.origin;
+	let absoluteUrl = new URL(relativePath, baseUrl).href;
+	return absoluteUrl;
+}
 const fsels = document.getElementsByTagName("zioscript");
 let globaldefinitions = {};
 for (let ein = 0; ein < fsels.length; ein++) {
@@ -300,7 +305,7 @@ for (let ein = 0; ein < fsels.length; ein++) {
 		}
 	}
 	if (thisScriptElement.getAttribute("src")) {
-		fetch(window.location.href.split("/").slice(0, window.location.href.split("/").length-1).join("/")+"/"+thisScriptElement.getAttribute("src").toString())
+		fetch(convertToAbsoluteUrl(thisScriptElement.getAttribute("src")))
 			.then((response) => response.text())
 			.then((content) => {
 				main(content.split("\n"));
